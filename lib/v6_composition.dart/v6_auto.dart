@@ -3,8 +3,8 @@
 /// More dartdocs go here.
 library;
 
-import 'package:oop_tutorial/v5_aggregation.dart/v5_fahrer.dart';
-import 'package:oop_tutorial/v5_aggregation.dart/v5_fuehrerschein.dart';
+import 'package:oop_tutorial/generals/v5_fahrer.dart';
+import 'package:oop_tutorial/generals/v5_fuehrerschein.dart';
 import 'package:oop_tutorial/v6_composition.dart/v6_fahrt.dart';
 
 export '../src/oop_tutorial_base.dart';
@@ -12,7 +12,7 @@ export '../src/oop_tutorial_base.dart';
 void main() {
   final maxFuehrerschein = Fuehrerschein(
     id: 123456,
-    typ: 'PKW',
+    typ: FuehrerscheinTyp.pkw,
     ausstellungsdatum: DateTime(2020),
     ablaufdatum: DateTime(2025),
   );

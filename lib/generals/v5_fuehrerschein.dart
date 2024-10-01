@@ -1,6 +1,6 @@
 class Fuehrerschein {
   int id;
-  String typ;
+  FuehrerscheinTyp typ;
   DateTime ausstellungsdatum;
   DateTime ablaufdatum;
   Fuehrerschein({
@@ -10,5 +10,15 @@ class Fuehrerschein {
     required this.ablaufdatum,
   });
   int get alter => DateTime.now().difference(ausstellungsdatum).inDays ~/ 365;
-  bool get isGueltig => DateTime.now().isBefore(ablaufdatum)&&DateTime.now().isAfter(ausstellungsdatum);
+  bool get isGueltig => DateTime.now().isBefore(ablaufdatum) && DateTime.now().isAfter(ausstellungsdatum);
+}
+
+enum FuehrerscheinTyp {
+  pkw('PKW'),
+  lKW('LKW'),
+  motorad('Motorad'),
+  bus('Bus');
+
+  final String lable;
+ const FuehrerscheinTyp(this.lable);
 }

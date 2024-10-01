@@ -1,4 +1,4 @@
-import 'package:oop_tutorial/v5_aggregation.dart/v5_fahrer.dart';
+import 'package:oop_tutorial/generals/v5_fahrer.dart';
 
 class Fahrt {
   DateTime start;
