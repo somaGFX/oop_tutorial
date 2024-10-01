@@ -5,7 +5,7 @@ library;
 
 import 'package:oop_tutorial/generals/v5_fahrer.dart';
 import 'package:oop_tutorial/generals/v5_fuehrerschein.dart';
-import 'package:oop_tutorial/v6_composition.dart/v6_fahrt.dart';
+import 'package:oop_tutorial/generals/v6_fahrt.dart';
 
 export '../src/oop_tutorial_base.dart';
 

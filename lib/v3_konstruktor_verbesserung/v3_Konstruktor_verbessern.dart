@@ -3,7 +3,7 @@
 /// More dartdocs go here.
 library;
 
-export 'src/oop_tutorial_base.dart';
+export '../src/oop_tutorial_base.dart';
 
 void main() {
   final auto = AutoV3(baujahr: DateTime(2020), marke: 'Mercedes');

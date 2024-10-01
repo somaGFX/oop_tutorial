@@ -1,6 +1,6 @@
-import 'package:oop_tutorial/v7_inheretenz/v7_Fahrzeug.dart';
+import 'package:oop_tutorial/v7_inheretenz_von_normaler_classe/v7_Fahrzeug.dart';
 
-class AutoV7 extends Fahrzeug {
+class AutoV7 extends V7Fahrzeug {
   AutoV7({
     super.reifenZahl = 4,
     super.maxInsasseZahl = 5,

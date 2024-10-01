@@ -1,25 +1,39 @@
+import 'package:oop_tutorial/generals/energie_enum.dart';
 import 'package:oop_tutorial/generals/v5_fahrer.dart';
-import 'package:oop_tutorial/v6_composition.dart/v6_fahrt.dart';
+import 'package:oop_tutorial/v9_implementierung/v9_fahrzueg.dart';
 
-class Fahrzeug {
-  static const material = 'Metal';
-  final int minIinsasseZahl = 1;
+class AutoV9 implements V9Fahrzeug {
+  @override
   int reifenZahl;
+  @override
   int maxInsasseZahl;
+  @override
+  int minIinsasseZahl = 1;
+  @override
   final DateTime baujahr;
+  @override
   double reifenRadius;
+  @override
   double reifenBreite;
+  @override
   Fahrer? fahrer;
+  @override
   String? marke;
-  Fahrzeug({
-    required this.reifenZahl,
-    required this.maxInsasseZahl,
+  @override
+  EnergieType? energieType;
+
+  AutoV9({
+     this.reifenZahl=4,
+     this.maxInsasseZahl=5,
     required this.baujahr,
-    required this.reifenRadius,
-    required this.reifenBreite,
+     this.reifenRadius=30,
+     this.reifenBreite=20,
     this.fahrer,
     this.marke,
+    this.energieType,
   });
+
+  @override
   void details() {
     print('''
     Fahrzeug Details:
@@ -33,30 +47,28 @@ class Fahrzeug {
     ''');
   }
 
+  @override
   void einergieVerbrauch() {
-    print('Fahrzeug verbraucht Energie');
+    print('Fahrzeug verbraucht $energieType');
   }
 
+  @override
   void umfall(int reifenAnzahl) {
-    reifenZahl -= reifenAnzahl;
-    print('Fahrzeug hat $reifenZahl Reifen');
+    print('Fahrzeug hat $reifenAnzahl Reifen umgefallen');
   }
 
+  @override
   void bremsen() {
     print('Fahrzeug bremst');
   }
 
+  @override
   void liefern() {
     print('Fahrzeug kann $maxInsasseZahl Personen liefern');
   }
 
+  @override
   void fahren() {
-    if (fahrer == null) {
-      print('Fahrzeug kann nicht fahren, weil kein Fahrer da ist');
-      return;
-    }
-    final fahrt = Fahrt(start: DateTime.now(), fahrer: fahrer!);
-    fahrt.sicherheitsniveau();
-    print('Fahrzeug fährt');
+    print('Auto fährt');
   }
 }

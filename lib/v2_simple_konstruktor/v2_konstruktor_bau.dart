@@ -3,40 +3,44 @@
 /// More dartdocs go here.
 library;
 
-export 'src/oop_tutorial_base.dart';
+export '../src/oop_tutorial_base.dart';
 
 void main() {
-  final auto = AutoV1();
+  final auto = AutoV2(DateTime(2020, 01, 01), 38, 25, 24);
   auto.fahrer = 'Ali';
   auto.marke = 'Mercedes';
   auto.details();
 }
 
-class AutoV1 {
+class AutoV2 {
   String material = 'metal';
   int insasseZahl = 5;
-  DateTime baujahr = DateTime(2000, 01, 01);
-  int alter = 24;
+  late DateTime baujahr;
+ late int alter ;
   int reifenZahl = 4;
   // 28 => 38
-  double reifenRadius=30;
+ late double reifenRadius ;
   // 18 => 25
-  double reifenBreite=20;
+ late double reifenBreite;
   String fahrer = 'Max';
   String marke = 'BMW';
-  AutoV1() {
-    print('Auto created');
+  AutoV2(DateTime gegebeneBaujahr,[double gegebeneReifenRadius=30,double gegebeneReifenBreite=20,int gegebeneAlter=24]) {
+    baujahr = gegebeneBaujahr;
+    reifenRadius = gegebeneReifenRadius;
+    reifenBreite = gegebeneReifenBreite;
+    alter = gegebeneAlter;
+    print('AutoV2 created');
   }
   void fahren(int geschwindigkeit) {
-    print('Auto fährt mit $geschwindigkeit km/h');
+    print('AutoV2 fährt');
   }
 
   void bremsen() {
-    print('Auto bremst');
+    print('AutoV2 bremst');
   }
 
   void liefern() {
-    print('Auto 5 Persone liefert');
+    print('AutoV2 5 Persone liefert');
   }
 
   void details() {
@@ -49,6 +53,5 @@ class AutoV1 {
     print('Fahrer: $fahrer');
     print('Marke: $marke');
     print('Reifen Zahl: $reifenZahl');
-
   }
 }

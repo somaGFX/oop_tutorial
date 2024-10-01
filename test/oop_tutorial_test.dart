@@ -1,4 +1,4 @@
-import 'package:oop_tutorial/v1_klassenbau.dart';
+import 'package:oop_tutorial/v1_simpel_default_no_konmstruktor/v1_klassenbau.dart';
 import 'package:test/test.dart';
 
 void main() {
