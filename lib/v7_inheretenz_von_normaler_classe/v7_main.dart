@@ -1,9 +1,6 @@
 import 'package:oop_tutorial/generals/v5_fahrer.dart';
 import 'package:oop_tutorial/generals/v5_fuehrerschein.dart';
-import 'package:oop_tutorial/v7_inheretenz_von_normaler_classe/v7_auto.dart';
-import 'package:oop_tutorial/v7_inheretenz_von_normaler_classe/v7_bus.dart';
 import 'package:oop_tutorial/v7_inheretenz_von_normaler_classe/v7_lkw.dart';
-import 'package:oop_tutorial/v7_inheretenz_von_normaler_classe/v7_spielzeug.dart';
 
 void main() {
   final feurerschein = Fuehrerschein(
