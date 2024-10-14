@@ -27,7 +27,12 @@ extension ListAustauschExtension<T> on List<T> {
   List<T> operator +(List<T> other) {
     return [...this, ...other];
   }
-  List<num> operator *(num factor){
-   return this.map((e) => e*factor).toList();
-  } 
+  // List<num> operator *(num factor){
+  //   for (var element in this) {
+  //     if(element is! num){
+  //       throw ArgumentError('Die Liste enthält nicht nur Zahlen');
+  //     }
+  //   }
+  //  return this.map((e) => e!*factor).toList();
+  // } 
 }
