@@ -8,10 +8,13 @@ mixin MobilHaus on V10Fahrzeug {
   set wohnFlacheSet(double wohnFlache) {
     this.wohnFlache = wohnFlache;
   }
+
   set sitzPlatzAnzahlSet(int sitzPlatzAnzahl) {
     this.sitzPlatzAnzahl = sitzPlatzAnzahl;
   }
+
   set schlafPlatzAnzahlSet(int schlafPlatzAnzahl) {
     this.schlafPlatzAnzahl = schlafPlatzAnzahl;
   }
 }
+
