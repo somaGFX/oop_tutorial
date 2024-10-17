@@ -1,4 +1,3 @@
-
 import 'package:oop_tutorial/generals/energie_enum.dart';
 import 'package:oop_tutorial/generals/v5_fahrer.dart';
 
@@ -36,19 +35,15 @@ abstract class V9AbstractFahrzeug {
     ''');
   }
 
-  void einergieVerbrauch() {
-    print('Fahrzeug verbraucht $energieType');
-  }
+  void einergieVerbrauch();
 
   void umfall(int reifenAnzahl);
 
-  void bremsen() {
-    print('Fahrzeug bremst');
-  }
+  void bremsen();
 
-  void liefern() {
-    print('Fahrzeug kann $maxInsasseZahl Personen liefern');
-  }
+  void liefern();
 
   void fahren();
 }
+
+

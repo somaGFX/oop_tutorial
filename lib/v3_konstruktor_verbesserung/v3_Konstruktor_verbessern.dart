@@ -1,9 +1,4 @@
-/// Support for doing something awesome.
-///
-/// More dartdocs go here.
-library;
 
-export '../src/oop_tutorial_base.dart';
 
 void main() {
   final auto = AutoV3(baujahr: DateTime(2020), marke: 'Mercedes');
@@ -23,7 +18,7 @@ class AutoV3 {
   double reifenBreite;
   String? fahrer;
   String marke;
-  // name Konstruktor
+  // Named Parameter
   AutoV3({
     required this.baujahr,
     required this.marke,

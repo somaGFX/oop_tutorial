@@ -1,6 +1,3 @@
-
-
-
 mixin Maschinengewehr {
   int kugelRadius = 10;
   int feuerrate = 20;
@@ -8,6 +5,7 @@ mixin Maschinengewehr {
   set kugelRadiusSet(int kugelRadius) {
     this.kugelRadius = kugelRadius;
   }
+
   int get magazinKapazitaet => magazinkapazitaet;
   void maschinengewehrSchiessen() {
     if (magazinkapazitaet == 0) {
@@ -17,8 +15,11 @@ mixin Maschinengewehr {
     magazinkapazitaet--;
     print('Maschinengewehr schießt');
   }
+
   reloadMaschinengewehr() {
     magazinkapazitaet = 10000;
     print('Maschinengewehr ist wieder geladen');
   }
 }
+
+

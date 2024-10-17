@@ -1,8 +1,9 @@
 import 'package:oop_tutorial/generals/energie_enum.dart';
 import 'package:oop_tutorial/generals/v5_fahrer.dart';
 import 'package:oop_tutorial/v9_implementierung/v9_fahrzueg.dart';
-
-class AutoV9 implements V9Fahrzeug  {
+// subklasse kann mehrere Klasse implementieren
+class AutoV9 implements V9Fahrzeug,WohnungsMobil {
+  // auch die Attributen muss man überschreiben
   @override
   int reifenZahl;
   @override
@@ -71,4 +72,13 @@ class AutoV9 implements V9Fahrzeug  {
   void fahren() {
     print('Auto fährt');
   }
+  // die alle Methoden und Attribute von der beiden Superklassen muss überschrieben werden.
+  @override
+  void wohnen(){
+    print('Wohnungsmobil wohnt');
+  }
 }
+  class WohnungsMobil{
+  wohnen(){
+    print('Wohnungsmobil wohnt');}
+  }

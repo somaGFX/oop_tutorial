@@ -1,12 +1,5 @@
-/// Support for doing something awesome.
-///
-/// More dartdocs go here.
-library;
-
 import 'package:oop_tutorial/generals/v5_fahrer.dart';
-import 'package:oop_tutorial/generals/v5_fuehrerschein.dart';
-
-export '../src/oop_tutorial_base.dart';
+import 'package:oop_tutorial/generals/v6_fuehrerschein.dart';
 
 void main() {
   final maxFuehrerschein = Fuehrerschein(
@@ -18,9 +11,8 @@ void main() {
   final max = Fahrer(vorname: 'Max', nachname: 'Mustermann', alter: 25, fuehrerschein: maxFuehrerschein);
   final auto = AutoV5(baujahr: DateTime(2020), marke: 'Mercedes', reifenRadius: 28, reifenBreite: 18, fahrer: max);
 
-  auto.fahren();
+  auto.details();
 }
-//########################## Encapsulation #########################
 
 class AutoV5 {
   static const String material = 'Metal';
@@ -30,9 +22,10 @@ class AutoV5 {
   final DateTime _baujahr;
   double _reifenRadius;
   double _reifenBreite;
+  // Aggregation Relation, weil Fahrer unabhängig von Auto existieren kann
   Fahrer fahrer;
   String? marke;
-  // named Konstruktor
+  // named Parameter
   AutoV5({
     required DateTime baujahr,
     required this.marke,

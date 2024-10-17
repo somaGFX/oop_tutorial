@@ -2,7 +2,9 @@ import 'package:oop_tutorial/generals/energie_enum.dart';
 import 'package:oop_tutorial/generals/v5_fahrer.dart';
 import 'package:oop_tutorial/v9_implementierung/v9_abstract_fahrzeug.dart';
 
+// man kan  auch abstract class implementieren
 class AutoV9Abs implements V9AbstractFahrzeug {
+  
   @override
   int reifenZahl;
   @override

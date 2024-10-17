@@ -1,16 +1,10 @@
-/// Support for doing something awesome.
-///
-/// More dartdocs go here.
-library;
-
+import 'package:oop_tutorial/generals/reifen.dart';
 import 'package:oop_tutorial/generals/v5_fahrer.dart';
-import 'package:oop_tutorial/generals/v5_fuehrerschein.dart';
-import 'package:oop_tutorial/generals/v6_fahrt.dart';
-
-export '../src/oop_tutorial_base.dart';
+import 'package:oop_tutorial/generals/v6_fuehrerschein.dart';
+import 'package:oop_tutorial/generals/v5_fahrt.dart';
 
 void main() {
-  final maxFuehrerschein = Fuehrerschein(
+ final maxFuehrerschein = Fuehrerschein(
     id: 123456,
     typ: FuehrerscheinTyp.pkw,
     ausstellungsdatum: DateTime(2020),
@@ -20,8 +14,10 @@ void main() {
   final auto = AutoV6(baujahr: DateTime(2020), marke: 'Mercedes', reifenRadius: 28, reifenBreite: 18, fahrer: max);
 
   auto.fahren();
+  print(auto.reifen);
 }
-//########################## Encapsulation #########################
+
+
 
 class AutoV6 {
   static const String material = 'Metal';
@@ -33,6 +29,7 @@ class AutoV6 {
   double _reifenBreite;
   Fahrer fahrer;
   String? marke;
+  Reifen reifen;
   // named Konstruktor
   AutoV6({
     required DateTime baujahr,
@@ -44,7 +41,10 @@ class AutoV6 {
   })  : _maxInsasseZahl = maxIinsasseZahl,
         _baujahr = baujahr,
         _reifenRadius = reifenRadius,
-        _reifenBreite = reifenBreite {
+        _reifenBreite = reifenBreite,
+        // Komposition Relation, weil Reifen existiert nur wenn Auto existiert
+        // wenn Auto gelöscht wird, wird Reifen auch gelöscht
+        reifen = Reifen(radius: reifenRadius, breite: reifenBreite, position: '') {
     if (maxIinsasseZahl > 8) throw Exception('Max IinsasseZahl darf nicht > 8 sein');
     if (maxIinsasseZahl < 1) throw Exception('Max IinsasseZahl darf nicht < 1 sein');
     if (baujahr.isAfter(DateTime.now())) throw Exception('Baujahr darf nicht in der Zukunft sein');
@@ -97,7 +97,10 @@ class AutoV6 {
   int get reifenZahl => _reifenZahl;
 //########################## Methoden #########################
   void fahren() {
+    // wenn Auto fährt, wird eine Fahrt erstellt
+    // die Fahrt verlangt ein Fahrer.
     final fahrt = Fahrt(start: DateTime.now(), fahrer: fahrer);
+    // diese Nethode bewertet die Fahrtsicherheit je nach Fahrer.
     fahrt.sicherheitsniveau();
   }
 

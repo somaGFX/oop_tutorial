@@ -1,4 +1,4 @@
-import 'package:oop_tutorial/generals/v5_fuehrerschein.dart';
+import 'package:oop_tutorial/generals/v6_fuehrerschein.dart';
 
 class Fahrer {
   String vorname;
@@ -30,4 +30,9 @@ class Fahrer {
 
   Fuehrerschein? get fuehrerschein => _fuehrerschein;
   int get fahrErfahrung => DateTime.now().difference(_fuehrerschein!.ausstellungsdatum).inDays ~/ 365;
+
+  @override
+  String toString() {
+    return 'Fahrer: $vorname $nachname, Alter: $alter, Fuehrerschein: $_fuehrerschein';
+  }
 }

@@ -1,17 +1,13 @@
-/// Support for doing something awesome.
-///
-/// More dartdocs go here.
-library;
 
-export '../src/oop_tutorial_base.dart';
 
 void main() {
-  // final auto = AutoV4(baujahr: DateTime(2020), marke: 'Mercedes');
-  // auto.marke = 'Mercedes';
-  // auto._maxIinsasseZahl = 3;
-  // print(auto._minIinsasseZahl);
-  // print(AutoV4.material);
-  // // auto.details();
+  final auto = AutoV4(baujahr: DateTime(2020), marke: 'Mercedes', reifenRadius: 28, reifenBreite: 18, fahrer: 'Max');
+  auto.marke = 'Mercedes';
+  // innerhalb der Klasse Datei kann man auf private Variablen zugreifen
+  auto._maxInsasseZahl = -3;
+  print(auto._maxInsasseZahl);
+  print(AutoV4.material);
+  // auto.details();
 }
 //########################## Encapsulation #########################
 
@@ -19,13 +15,16 @@ class AutoV4 {
   static const String material = 'Metal';
    int _reifenZahl = 4;
   int _maxInsasseZahl;
+  // min Insasse Zahl ist 1 und kann nicht geändert werden
   final int _minIinsasseZahl = 1;
+  // _baujahr kann nur im Konstruktor gesetzt werden und darf nich geändert werden.
+  // es macht keinen Sinn, dass das Baujahr geändert wird
   final DateTime _baujahr;
    double _reifenRadius; 
    double _reifenBreite; 
   String fahrer;
   String? marke;
-  // named Konstruktor
+  // named Parameter
   AutoV4({
     required DateTime baujahr,
     required this.marke,
@@ -37,6 +36,7 @@ class AutoV4 {
         _baujahr = baujahr,
         _reifenRadius = reifenRadius,
         _reifenBreite = reifenBreite {
+          // Konstruktor Validierung 
     if (maxIinsasseZahl > 8) throw Exception('Max IinsasseZahl darf nicht > 8 sein');
     if (maxIinsasseZahl < 1) throw Exception('Max IinsasseZahl darf nicht < 1 sein');
     if (baujahr.isAfter(DateTime.now())) throw Exception('Baujahr darf nicht in der Zukunft sein');

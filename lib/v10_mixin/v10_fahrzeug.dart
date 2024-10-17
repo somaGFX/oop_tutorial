@@ -2,7 +2,7 @@
 
 import 'package:oop_tutorial/generals/energie_enum.dart';
 import 'package:oop_tutorial/generals/v5_fahrer.dart';
-import 'package:oop_tutorial/generals/v6_fahrt.dart';
+import 'package:oop_tutorial/generals/v5_fahrt.dart';
 
 class V10Fahrzeug {
   static const material = 'Metal';

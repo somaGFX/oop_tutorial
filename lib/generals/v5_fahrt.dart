@@ -15,21 +15,21 @@ class Fahrt {
 
   void sicherheitsniveau() {
     if (fahrer.alter < 10) {
-      print('Scheiße');
+      print('Fahrt-Daten: Katastrophal Fahrt');
       return;
     }
     if (fahrer.fuehrerschein == null) {
-      print('Fahrer hat keinen Fuehrerschein');
+      print('Fahrt-Daten: Fahrer hat keinen Fuehrerschein');
       return;
     }
     if (fahrer.fahrErfahrung < 3) {
-      print('Fahrer hat zu wenig Fahrerfahrung');
+      print('Fahrt-Daten: Fahrer hat zu wenig Fahrerfahrung');
       return;
     }
     if (fahrer.alter < 18) {
-      print('Fahrer ist zu jung');
+      print('Fahrt-Daten: Fahrer ist zu jung');
       return;
     }
-    print('Sichere Fahrt');
+    print('Fahrt-Daten: Sichere Fahrt');
   }
 }

@@ -1,18 +1,20 @@
-/// Support for doing something awesome.
-///
-/// More dartdocs go here.
-library;
 
-export '../src/oop_tutorial_base.dart';
 
 void main() {
+  // Objekt-Instanzierung, (Erzeugung eines Objekts)
   final auto = AutoV1();
+  // Änderung des Werts eines Attributs
   auto.fahrer = 'Ali';
   auto.marke = 'Mercedes';
+  // Methode aufrufen
   auto.details();
 }
 
+// ########################## Klassenbau #########################
+// class Klassename {}
 class AutoV1 {
+  // ###################### Attribute ######################
+  // Attribut-Datentypen Attribut-Name = Wert;
   String material = 'metal';
   int insasseZahl = 5;
   DateTime baujahr = DateTime(2000, 01, 01);
@@ -24,9 +26,13 @@ class AutoV1 {
   double reifenBreite=20;
   String fahrer = 'Max';
   String marke = 'BMW';
+  // ###################### Konstruktor ######################
+  // Hier ist es unnötig, weil Dart automatisch einen Konstruktor erstellt.
+  // Wir haben es nur für die Erklärung geschrieben.
   AutoV1() {
     print('Auto created');
   }
+  // ###################### Methoden #########################
   void fahren(int geschwindigkeit) {
     print('Auto fährt mit $geschwindigkeit km/h');
   }
