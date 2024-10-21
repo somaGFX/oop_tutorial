@@ -1,7 +1,4 @@
 
-
-
-
 class V12Auto {
   int reifenZahl;
   int insasseZahl;

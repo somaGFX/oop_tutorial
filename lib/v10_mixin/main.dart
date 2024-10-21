@@ -13,7 +13,7 @@ void main() {
   final hauseBus = HuaseBus(
     baujahr: DateTime(2020),
   );
-  auto.schissen();
+  auto.schiessen();
   auto.maschinengewehrSchiessen();
   // auto.feuerrate = 100;
   print('Feuerrate: ${auto.feuerrate}');

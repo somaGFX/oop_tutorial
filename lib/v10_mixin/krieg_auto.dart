@@ -10,12 +10,15 @@ class KriegsMobil extends V10Fahrzeug with Rakete, Maschinengewehr {
     required super.maxInsasseZahl,
     required super.reifenRadius,
     required super.reifenBreite,
-  });
+    int? rAnzahl,
+    int? rGeschwindigkeit,
+  }) {
+    // Zuweisung von Werten zu Mixin-Attributen
+    raketenAnzahl = rAnzahl ?? raketenAnzahl;
+    geschwindigkeit = rGeschwindigkeit ?? geschwindigkeit;
+  }
   @override
   void fahren() {
-    super.fahren();
-    print('KriegAuto fährt');
+    print('KriegsMobil fährt');
   }
 }
-
-
