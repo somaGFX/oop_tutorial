@@ -1,3 +1,2 @@
-# Überschrift
 
-Dieses Wort ist **rot** und dieses **blau**.
+<!-- <span style="color:red;">`Text in rot`</span> -->

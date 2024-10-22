@@ -57,10 +57,12 @@ class V16Auto {
       marke: 'Auto1',
     );
   }
-
+// ToMap-Methode mit einer Liste von Reifen-Objekten
   Map<String, dynamic> toMap() {
+    // Die Reifen-Liste wird in eine Map-Liste umgewandelt
     final reifenMapList = <Map<String, dynamic>>[];
     for (var element in reifen) {
+      // Jedes Reifen-Objekt wird in eine Map umgewandelt und in die Liste eingefügt
       reifenMapList.add(element.toMap());
     }
     return <String, dynamic>{
@@ -70,15 +72,18 @@ class V16Auto {
       'marke': marke,
     };
   }
-
+// Ein Map<String,Dynamic> in ein V16Auto-Objekt umwandeln
   factory V16Auto.fromMap(Map<String, dynamic> map) {
+    // Die Reifen-Liste wird definiert
     final reifenList = <Reifen>[];
     for (var element in map['reifen'] as List) {
+      // Jedes Element in der Liste wird in ein Reifen-Objekt umgewandelt und in die Liste eingefügt
       reifenList.add(Reifen.fromMap(element as Map<String, dynamic>));
     }
     return V16Auto(
       insasseZahl: map['insasseZahl'] as int,
       baujahr: DateTime.fromMillisecondsSinceEpoch(map['baujahr'] as int),
+      // Die Reifen-Liste wird in das Attribut 'reifen' geschrieben
       reifen: reifenList,
       marke: map['marke'] != null ? map['marke'] as String : null,
     );
