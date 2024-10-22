@@ -56,21 +56,30 @@ class V13Auto {
       'marke': marke,
     };
   }
-
+  // Ein Map<String,Dynamic> in ein V13Auto-Objekt umwandeln
   factory V13Auto.fromMap(Map<String, dynamic> map) {
+    // Die Erzeugung des Objekts erfolgt mit den Werten aus der Map
     return V13Auto(
+      // Der Wert von 'reifenZahl' wird aus der Map gelesen und in das Attribut 'reifenZahl' geschrieben
+      // weil die Mappe dynamische Values hat, muss die Value mit 'as' gecastet werden
       reifenZahl: map['reifenZahl'] as int,
       insasseZahl: map['insasseZahl'] as int,
+      // DateTime.fromMillisecondsSinceEpoch() erzeugt ein DateTime-Objekt aus Millisekunden
+      // weile die DateTime-Objekte in der Mappe als int gespeichert sind, wird der Wert mit 'as' gecastet
       baujahr: DateTime.fromMillisecondsSinceEpoch(map['baujahr'] as int),
       reifenRadius: map['reifenRadius'] as double,
       reifenBreite: map['reifenBreite'] as double,
+      // marke ist ein optionales Attribut, deshalb wird es mit einem ternären Operator gelesen
       marke: map['marke'] != null ? map['marke'] as String : null,
     );
   }
 
   String toJson() => json.encode(toMap());
-
+ 
   factory V13Auto.fromJson(String source) {
+    // Die Methode fromMap wird aufgerufen, um ein V13Auto-Objekt zu erzeugen
+    // Die Methode json.decode() wandelt den JSON-String in eine Map<String, dynamic> um,
+    // somit kann die Methode fromMap() es handeln
     return V13Auto.fromMap(json.decode(source) as Map<String, dynamic>);
   }
 
@@ -103,6 +112,7 @@ class V13Auto {
 
 String v13AutoJsonElement =
     '{"reifenZahl":40,"insasseZahl":5,"baujahr":1577833200000,"reifenRadius":30.0,"reifenBreite":20.0,"marke":"Auto1"}';
+  // so sieht die JSON-Liste aus
 String v13AutoJsonFile = '''
 [
   {

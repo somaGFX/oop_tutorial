@@ -16,11 +16,16 @@ void main() {
   // print(auto.toJson());
   // final aotoFromjson = V13Auto.fromJson(v13AutoJsonElement);
   // print(aotoFromjson.toString());
+  // Objekte List erstellen
   final List<V13Auto> autos = [];
+  // JSON String in Map-Liste umwandeln
   final jsonList = jsonDecode(v13AutoJsonFile);
   print(jsonList);
+  // Map-Liste durchgehen
   for (var element in jsonList) {
+  // Map in Objekt umwandeln und in die Liste einfügen
     autos.add(V13Auto.fromMap(element));
+    // die eingefügten Objekte printen
     print(autos.last.toString());
   }
   // print(jsonDecode(v13AutoJsonFile));

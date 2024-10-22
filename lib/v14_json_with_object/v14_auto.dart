@@ -55,7 +55,7 @@ class V14Auto {
       engine: engine ?? this.engine,
     );
   }
-
+// die gleiche Methode wie in letzter Lektion
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
       'reifenZahl': reifenZahl,
@@ -64,10 +64,12 @@ class V14Auto {
       'reifenRadius': reifenRadius,
       'reifenBreite': reifenBreite,
       'marke': marke,
+      // engine ist ein Objekt, das in eine Map umgewandelt wird
+      // somit kann die json.encode Methode das Objekt serialisieren
       'engine': engine.toMap(),
     };
   }
-
+// die gleiche Methode wie in letzter Lektion
   factory V14Auto.fromMap(Map<String, dynamic> map) {
     return V14Auto(
       reifenZahl: map['reifenZahl'] as int,
@@ -76,6 +78,8 @@ class V14Auto {
       reifenRadius: map['reifenRadius'] as double,
       reifenBreite: map['reifenBreite'] as double,
       marke: map['marke'] != null ? map['marke'] as String : null,
+      // engine ist ein Objekt, das aus einer Map erstellt wird
+      // somit kann die json.decode Methode das Objekt deserialisieren
       engine: Engine.fromMap(map['engine'] as Map<String, dynamic>),
     );
   }

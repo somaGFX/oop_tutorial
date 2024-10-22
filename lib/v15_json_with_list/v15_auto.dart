@@ -50,11 +50,12 @@ class V15Auto {
     return V15Auto(
       insasseZahl: map['insasseZahl'] as int,
       baujahr: DateTime.fromMillisecondsSinceEpoch(map['baujahr'] as int),
+      // Die Reifen sind eine simple Liste von Strings, daher brauchen wir keine spezielle Methode.
       reifen: List<String>.from(map['reifen'] as List),
       marke: map['marke'] as String?,
     );
   }
-
+  // Die String, dynamische Mappe wird als JSON-codiertes Objekt zurückgegeben.
   String toJson() => json.encode(toMap());
 
   factory V15Auto.fromJson(String source) => V15Auto.fromMap(json.decode(source) as Map<String, dynamic>);
@@ -66,8 +67,9 @@ class V15Auto {
 
  
 }
-
+// so Sieht das JSON-Objekt aus
 final v15AutoJsonElement ='{"insasseZahl":5,"baujahr":1577833200000,"reifen":["front-left","front-right","rear-left","rear-right"],"marke":"Auto1"}';
+
 final v15AutoJsonfile='''
 [
   {
