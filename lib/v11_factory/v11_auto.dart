@@ -32,6 +32,18 @@ class V11Auto {
       ),
     );
   }
+  factory V11Auto.audiA8(){
+    return V11Auto(
+      marke: Marken.audiA8.label,
+      baujahr: DateTime(2020),
+      engine: Engine(
+        energieType: EnergieType.benzine.lable,
+        leistung: 200,
+        zylinderAnzahl: 6,
+        maxGeschwindigkeit: 220,
+      ),
+    );
+  }
   factory V11Auto.fromMarke(String marke) {
     if (marke == Marken.audiA8.label) {
       return V11Auto(
