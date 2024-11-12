@@ -13,12 +13,23 @@ class Union {
     return 'Union: Einwohner: $einwohnerAnzahl, Fläche: $flaeche km²';
   }
 
+  @override
+  bool operator ==(Object other) {
+    if (identical(this, other)) return true;
+
+    return other is Union && other.laender == laender;
+  }
+
+  @override
+  int get hashCode => laender.hashCode;
+ // other kann ein Land oder Union sein
   Union operator +(dynamic other) {
+    
     if (other.runtimeType == Land) {
       return Union(laender: laender..add(other));
     }
     if (other.runtimeType == Union) {
-      return Union(laender: [...laender]..addAll(other.laender));
+      return Union(laender: [...laender, ...other.laender]);
     }
     throw Exception('Invalid type, Operator darf nur mit Land oder Union verwendet werden');
   }

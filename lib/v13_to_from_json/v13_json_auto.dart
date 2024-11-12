@@ -1,4 +1,5 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
+
 import 'dart:convert';
 
 class V13Auto {
@@ -16,6 +17,7 @@ class V13Auto {
     required this.reifenBreite,
     this.marke,
   });
+  
   factory V13Auto.defaultAuto() {
     return V13Auto(
       baujahr: DateTime(2020),
@@ -43,7 +45,7 @@ class V13Auto {
       marke: marke ?? this.marke,
     );
   }
-
+//   At_Name  AT_Wert
   Map<String, dynamic> toMap() {
     // reifenZahl = reifenZahl == 4 ? reifenZahl : 4;
     // reifenRadius = reifenRadius>15 ? reifenRadius : 15;
@@ -56,6 +58,7 @@ class V13Auto {
       'marke': marke,
     };
   }
+
   // Ein Map<String,Dynamic> in ein V13Auto-Objekt umwandeln
   factory V13Auto.fromMap(Map<String, dynamic> map) {
     // Die Erzeugung des Objekts erfolgt mit den Werten aus der Map
@@ -66,7 +69,7 @@ class V13Auto {
       insasseZahl: map['insasseZahl'] as int,
       // DateTime.fromMillisecondsSinceEpoch() erzeugt ein DateTime-Objekt aus Millisekunden
       // weile die DateTime-Objekte in der Mappe als int gespeichert sind, wird der Wert mit 'as' gecastet
-      baujahr: DateTime.fromMillisecondsSinceEpoch(map['baujahr'] as int),
+      baujahr: DateTime.fromMillisecondsSinceEpoch(map['baujahr'] as int) ,
       reifenRadius: map['reifenRadius'] as double,
       reifenBreite: map['reifenBreite'] as double,
       // marke ist ein optionales Attribut, deshalb wird es mit einem ternären Operator gelesen
@@ -96,18 +99,7 @@ class V13Auto {
     ''';
   }
 
-  // @override
-  // bool operator ==(covariant V13Auto other) {
-  //   if (identical(this, other)) return true;
 
-  //   return
-  //     other.reifenZahl == reifenZahl &&
-  //     other.insasseZahl == insasseZahl &&
-  //     other.baujahr == baujahr &&
-  //     other.reifenRadius == reifenRadius &&
-  //     other.reifenBreite == reifenBreite &&
-  //     other.marke == marke;
-  // }
 }
 
 String v13AutoJsonElement =
