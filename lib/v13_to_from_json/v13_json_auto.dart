@@ -79,6 +79,7 @@ class V13Auto {
 
   String toJson() => json.encode(toMap());
  
+ 
   factory V13Auto.fromJson(String source) {
     // Die Methode fromMap wird aufgerufen, um ein V13Auto-Objekt zu erzeugen
     // Die Methode json.decode() wandelt den JSON-String in eine Map<String, dynamic> um,

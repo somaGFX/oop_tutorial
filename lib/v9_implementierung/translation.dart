@@ -1,5 +1,14 @@
 
 
+
+
+void main() {
+  translate('es');
+  // translate('de');
+  // translate('en');
+}
+
+// abstract Klass, die die verwendeten texten in der App enthält.
 abstract class Translation{
  String get hi;
  String get bye;
@@ -7,6 +16,7 @@ abstract class Translation{
 //  String get niceToMeetYou;
 }
  
+ // Klassen, die die Translation Klasse implementieren.
  class Deutsch implements Translation{
    @override
    String get hi => 'Hallo';
@@ -41,4 +51,27 @@ class Spanish implements Translation{
    String get howAreYou => 'Comment ça va?';
  }
  
- 
+
+ // Methode, die die Sprache als Parameter nimmt und die entsprechende Klasse instanziiert.
+ translate(String language) {
+  Translation translation;
+  switch (language) {
+    case 'de':
+      translation = Deutsch();
+      break;
+    case 'en':
+      translation = English();
+      break;
+    case 'es':
+      translation = Spanish();
+      break;
+    case 'fr':
+      translation = Francais();
+      break;
+    default:
+      translation = English();
+  }
+  print(translation.hi);
+  print(translation.bye);
+  print(translation.howAreYou);
+}

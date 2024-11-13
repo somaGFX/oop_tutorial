@@ -12,7 +12,10 @@ void main() {
 //########################## Encapsulation #########################
 
 class AutoV4 {
+  // die alle Autos haben das gleiche Material
   static const String material = 'Metal';
+  // private Variabl mit _ davor.
+  // reifenZahl kann beim Umfall geändert werden, daher muss geschützt werden
    int _reifenZahl = 4;
   int _maxInsasseZahl;
   // min Insasse Zahl ist 1 und kann nicht geändert werden
@@ -37,6 +40,7 @@ class AutoV4 {
         _reifenRadius = reifenRadius,
         _reifenBreite = reifenBreite {
           // Konstruktor Validierung 
+
     if (maxIinsasseZahl > 8) throw Exception('Max IinsasseZahl darf nicht > 8 sein');
     if (maxIinsasseZahl < 1) throw Exception('Max IinsasseZahl darf nicht < 1 sein');
     if (baujahr.isAfter(DateTime.now())) throw Exception('Baujahr darf nicht in der Zukunft sein');
@@ -45,7 +49,8 @@ class AutoV4 {
   }
 
 //######################### Setters #########################
-
+  
+  // Setter Validierung
   set maxIinsasseZahl(int value) {
     if (value > 8) {
       _maxInsasseZahl = 8;
@@ -90,6 +95,7 @@ class AutoV4 {
   void fahren() {
     print('AutoV4 fährt');
   }
+  // Einen Beispiel für Attribute ,die nur innerhalb einer Methode geändert werden können
   void umfall(int verlusteReifen) {
     if(verlusteReifen.isNegative||verlusteReifen>_reifenZahl) return;
     _reifenZahl -= verlusteReifen;

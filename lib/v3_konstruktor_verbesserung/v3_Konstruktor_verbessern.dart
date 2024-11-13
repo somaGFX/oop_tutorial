@@ -1,6 +1,8 @@
 
 
 void main() {
+  // mit named parameter Konstruktor muss die Reihenfolge der Parameter nicht beachtet werden
+  // Aber der Name des Parameters muss beim Bau des Objekts gegeben werden
   final auto = AutoV3(baujahr: DateTime(2020), marke: 'Mercedes');
   auto.marke = 'Mercedes';
   auto.details();
@@ -12,16 +14,17 @@ class AutoV3 {
   int insasseZahl;
   DateTime baujahr;
   int alter;
-  // 28 => 38
   double reifenRadius;
-  // 18 => 25
   double reifenBreite;
   String? fahrer;
   String marke;
   // Named Parameter
   AutoV3({
+    // (This) Schlusselwort weist zur aktuellen Klassenojekt zu.
+    // die Parameter die mit required markiert sind, müssen beim Bau des Objekts gegeben werden
     required this.baujahr,
     required this.marke,
+    // Wenn der Parameter standardwert hat oder nullable ist, darf nich required sein
     this.reifenRadius = 30,
     this.reifenBreite = 20,
     this.alter = 24,
@@ -30,17 +33,7 @@ class AutoV3 {
   }) {
     print('AutoV3 created');
   }
-  // Abgekürzte Konstruktor
-  // AutoV3(this.baujahr, [this.reifenRadius=30, this.reifenBreite=18, this.alter=15]) {
-  //   print('AutoV3 created');
-  // }
-  // AutoV3(DateTime gegebeneBaujahr,[double gegebeneReifenRadius=30,double gegebeneReifenBreite=20,int gegebeneAlter=24]) {
-  //   baujahr = gegebeneBaujahr;
-  //   reifenRadius = gegebeneReifenRadius;
-  //   reifenBreite = gegebeneReifenBreite;
-  //   alter = gegebeneAlter;
-  //   print('AutoV3 created');
-  // }
+
   void fahren(int geschwindigkeit) {
     print('AutoV3 fährt');
   }

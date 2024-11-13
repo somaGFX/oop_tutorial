@@ -3,11 +3,11 @@ import 'package:oop_tutorial/v4_konstruktor_versichern/v4_konstruktor_versichern
 void main() {
   final auto = AutoV4(baujahr: DateTime(2020), marke: 'Mercedes', reifenRadius: 28, reifenBreite: 18,fahrer: 'Max');
   auto.marke = 'Mercedes';
-  auto.maxIinsasseZahl = 10;
-  // auto._minIinsasseZahl = 3;
-  // print(auto._minIinsasseZahl);
-  print(auto.baujahr);
+  auto.maxIinsasseZahl = 10; // 8
+  // auto._minIinsasseZahl = 3; // Fehler weil _minIinsasseZahl ist private und kann nicht geändert werden
+  // print(auto._minIinsasseZahl); // Fehler weil _minIinsasseZahl ist private und kann nicht gelesen werden
+  print(auto.baujahr); // 2020 _baujahr Attribute hat einen Bauejahr Getter
   auto.details();
-  auto.umfall(1);
+  auto.umfall(1); // 3 Reifenanzahl hat sich wegen Umfall geändert.
   auto.details();
 }

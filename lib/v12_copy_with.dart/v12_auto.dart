@@ -1,4 +1,6 @@
 
+
+ // Normaler Auto Klasse
 class V12Auto {
   int reifenZahl;
   int insasseZahl;

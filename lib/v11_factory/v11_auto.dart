@@ -6,9 +6,7 @@ class V11Auto {
   int reifenZahl;
   int insasseZahl;
   DateTime baujahr;
-  // 28 => 38
   double reifenRadius;
-  // 18 => 25
   double reifenBreite;
   Engine engine;
   String? marke;
@@ -21,6 +19,7 @@ class V11Auto {
     required this.engine,
     this.marke,
   });
+  // factory constructor
   factory V11Auto.defaultAuto() {
     return V11Auto(
       baujahr: DateTime(2020),
@@ -32,6 +31,7 @@ class V11Auto {
       ),
     );
   }
+  // Mittels Factory wird das Objekt erstellt
   factory V11Auto.audiA8(){
     return V11Auto(
       marke: Marken.audiA8.label,
@@ -44,7 +44,10 @@ class V11Auto {
       ),
     );
   }
+  //Mittels die Marke wird das Objekt erstellt
+  // Der Benutzer muss nur die Marke eingeben, und der Factory übernimmt den Rest.
   factory V11Auto.fromMarke(String marke) {
+    // jeweils hat ihre eigene Eigenschaften
     if (marke == Marken.audiA8.label) {
       return V11Auto(
         marke: Marken.audiA8.label,

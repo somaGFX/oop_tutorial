@@ -2,6 +2,8 @@ import 'package:oop_tutorial/generals/energie_enum.dart';
 import 'package:oop_tutorial/generals/v5_fahrer.dart';
 import 'package:oop_tutorial/generals/v5_fahrt.dart';
 
+
+// die Oberklasse kann ganz normal sein.
 class V7Fahrzeug {
   static const material = 'Metal';
   final int minIinsasseZahl = 1;

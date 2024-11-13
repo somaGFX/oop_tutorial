@@ -4,6 +4,7 @@ import 'package:oop_tutorial/generals/energie_enum.dart';
 import 'package:oop_tutorial/generals/v5_fahrer.dart';
 import 'package:oop_tutorial/generals/v5_fahrt.dart';
 
+// Ganz normale Klasse
 class V10Fahrzeug {
   static const material = 'Metal';
   final int minIinsasseZahl = 1;

@@ -48,6 +48,6 @@ abstract class V8Fahrzeug {
   void liefern() {
     print('Fahrzeug kann $maxInsasseZahl Personen liefern');
   }
-
+   // Abstract Klassen können auch abstract Methoden haben
   void fahren();
 }

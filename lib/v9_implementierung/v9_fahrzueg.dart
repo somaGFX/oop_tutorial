@@ -2,6 +2,8 @@ import 'package:oop_tutorial/generals/energie_enum.dart';
 import 'package:oop_tutorial/generals/v5_fahrer.dart';
 import 'package:oop_tutorial/generals/v5_fahrt.dart';
 
+
+// Bei der Implementierung kann die oberklasse ganz normal, oder abstract sein.
 class V9Fahrzeug {
   static const material = 'Metal';
   final int minIinsasseZahl = 1;
@@ -23,6 +25,7 @@ class V9Fahrzeug {
     this.marke,
     this.energieType,
   }){
+    // bei der Implementierung ein Unterklasse wird die Konstruktor von der Oberklasse nicht aufgerufen werden.
     print('Fahrzeug Objekt ist erstellt');
   }
   void details() {

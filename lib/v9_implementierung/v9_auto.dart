@@ -3,7 +3,8 @@ import 'package:oop_tutorial/generals/v5_fahrer.dart';
 import 'package:oop_tutorial/v9_implementierung/v9_fahrzueg.dart';
 // subklasse kann mehrere Klasse implementieren
 class AutoV9 implements V9Fahrzeug,WohnungsMobil {
-  // auch die Attributen muss man überschreiben
+  // anders als Erben, bei der Implementierung muss die alle Attribute und Methoden von der Superklasse überschrieben werden.
+  // egal ob die Methode abstrakt oder nicht.
   @override
   int reifenZahl;
   @override

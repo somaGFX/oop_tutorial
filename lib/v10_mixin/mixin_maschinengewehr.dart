@@ -1,23 +1,24 @@
 mixin Maschinengewehr {
   int kugelRadius = 10;
   int feuerrate = 20;
-  int magazinkapazitaet = 10000;
+  // Mixins können auch private Attribute haben.
+  int _magazinkapazitaet = 10000;
   set kugelRadiusSet(int kugelRadius) {
     this.kugelRadius = kugelRadius;
   }
 
-  int get magazinKapazitaet => magazinkapazitaet;
+  int get magazinKapazitaet => _magazinkapazitaet;
   void maschinengewehrSchiessen() {
-    if (magazinkapazitaet == 0) {
+    if (_magazinkapazitaet == 0) {
       print('Maschinengewehr kann nicht schießen, weil keine Kugel mehr da ist');
       return;
     }
-    magazinkapazitaet--;
+    _magazinkapazitaet--;
     print('Maschinengewehr schießt');
   }
 
   reloadMaschinengewehr() {
-    magazinkapazitaet = 10000;
+    _magazinkapazitaet = 10000;
     print('Maschinengewehr ist wieder geladen');
   }
 }

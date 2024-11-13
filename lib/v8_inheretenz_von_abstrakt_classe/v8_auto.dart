@@ -10,6 +10,8 @@ class AutoV8 extends V8Fahrzeug {
     super.reifenBreite = 22,
     required super.fahrer,
   });
+
+  // die abstracte Methoden muss überschrieben werden. sondern wird ein Fehler geben.
   @override
   void fahren() {
    if(fahrer == null){
@@ -17,6 +19,7 @@ class AutoV8 extends V8Fahrzeug {
      return;    }
     print('AutoV7 fährt');
   }
+  // Nicht abstrakte Methode kann überschrieben werden, oder nicht.
   @override
   void umfall(int reifenAnzahl ){
     print('AutoV8 ist umgefallen');
