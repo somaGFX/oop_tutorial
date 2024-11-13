@@ -1,8 +1,5 @@
-
-
-// Wegen des privaten Konstruktors kann ein Objekt nicht direkt erstellt werden
+// Weil die Klasse abstract ist, kann sie nicht direkt instanziiert werden 
 // der Bau des Objekts wird nur durch die Factory-Methode und Unterklassen ermöglicht
-
 abstract class FahrzeugGerichtetBeiUnterKlassen {
   String name;
   int geschwindigkeit;
@@ -10,67 +7,55 @@ abstract class FahrzeugGerichtetBeiUnterKlassen {
   FahrzeugGerichtetBeiUnterKlassen._(this.name, this.geschwindigkeit);
 
   factory FahrzeugGerichtetBeiUnterKlassen.auto({required String name, required int geschwindigkeit}) {
-    return _Auto(name: name, geschwindigkeit: geschwindigkeit);
-  }
-  factory FahrzeugGerichtetBeiUnterKlassen.buss(
-      {required String name, required int geschwindigkeit, required int sitzplaetze}) {
-    return _Bus(name: name, geschwindigkeit: geschwindigkeit, sitzplaetze: sitzplaetze);
+    return Auto._(name: name, geschwindigkeit: geschwindigkeit);
   }
 
-  factory FahrzeugGerichtetBeiUnterKlassen.publischBus(
+  factory FahrzeugGerichtetBeiUnterKlassen.bus(
       {required String name, required int geschwindigkeit, required int sitzplaetze}) {
-    return Bus(name: name, geschwindigkeit: geschwindigkeit, sitzplaetze: sitzplaetze);
+    return Bus._(name: name, geschwindigkeit: geschwindigkeit, sitzplaetze: sitzplaetze);
   }
 
   factory FahrzeugGerichtetBeiUnterKlassen.lkw(
       {required String name, required int geschwindigkeit, required int maxLast}) {
-    return _LKW(name: name, geschwindigkeit: geschwindigkeit, maxLast: maxLast);
+    return LKW._(name: name, geschwindigkeit: geschwindigkeit, maxLast: maxLast);
   }
   // Abstract Methoden, weil sie in den Unterklassen implementiert werden müssen
   void fahren();
 }
 
 // Private Klassen, die nur durch die abstrakten Klasse instanziiert werden können
-class _Auto extends FahrzeugGerichtetBeiUnterKlassen {
-  _Auto({required name, required geschwindigkeit}) : super._(name, geschwindigkeit);
+class Auto extends FahrzeugGerichtetBeiUnterKlassen {
+  // Auch die Tochterklassen haben private Konstruktoren.
+  // weil sie sollen nicht direkt instanziiert werden.
+  Auto._({required name, required geschwindigkeit}) : super._(name, geschwindigkeit);
 
-  String get info => '$_Auto: $name, $geschwindigkeit';
+  String get info => '$Auto: $name, $geschwindigkeit';
   // Die Methode fahren() wird in der Klasse implementiert
-  // die neue Implementierung in Tochter wird übernommen
   @override
   void fahren() {
     print('Das Auto fährt');
   }
-  // die Methoden und Eigenschaften die nur in der private Unterklasse existieren 
-  // können nicht durch die Objekte zugegriffen werden
+
+// man kann spezifische Methoden für die Unterklasse implementieren
   void bremsen() {
     print('Das Auto bremst');
   }
 }
 
-class _Bus extends FahrzeugGerichtetBeiUnterKlassen {
-  // auch die Attribuen, die nur in der privaten Klasse existieren 
-  // können nicht durch die Objekte zugegriffen werden
-  int sitzplaetze;
-  _Bus({required name, required geschwindigkeit, required this.sitzplaetze}) : super._(name, geschwindigkeit);
-  @override
-  void fahren() {
-    print('Der Bus fährt');
-  }
-}
-
 class Bus extends FahrzeugGerichtetBeiUnterKlassen {
+  // Die Unterklassen können auch spezifische Attribute haben
   int sitzplaetze;
-  Bus({required name, required geschwindigkeit, required this.sitzplaetze}) : super._(name, geschwindigkeit);
+  Bus._({required name, required geschwindigkeit, required this.sitzplaetze}) : super._(name, geschwindigkeit);
+  
   @override
   void fahren() {
     print('Der Bus fährt');
   }
 }
 
-class _LKW extends FahrzeugGerichtetBeiUnterKlassen {
+class LKW extends FahrzeugGerichtetBeiUnterKlassen {
   int maxLast;
-  _LKW({required name, required geschwindigkeit, required this.maxLast}) : super._(name, geschwindigkeit);
+  LKW._({required name, required geschwindigkeit, required this.maxLast}) : super._(name, geschwindigkeit);
   @override
   void fahren() {
     print('Der LKW fährt');

@@ -1,9 +1,10 @@
 
 // Wegen des privaten Konstruktors kann ein Objekt nicht direkt erstellt werden
 // der Bau des Objekts wird nur durch die Factory-Methode ermöglicht
-class FahrzeugGerichtetBeiFactorie {
+ class FahrzeugGerichtetBeiFactorie {
   final String name;
   final int geschwindigkeit;
+  // _typ ist verwended um die Methoden zu spezifizieren
   final String _typ;
   final int sitzplaetze;
   // Privater Konstruktor, kann keine Objekte direkt erstellen

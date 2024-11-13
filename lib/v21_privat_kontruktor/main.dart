@@ -7,22 +7,25 @@ void main() {
   final farbe = Farben.blau; // OK: die static Attribute sind verfügbar
 
   print(farbe);
-  // final fahrzeug = Fahrzeug('BMW', 200); // Fehler: The constructor isn't available
-  // final Fahrzeug auto = _Auto('BMW', 200);// Fehler: Private Klassen können nicht direkt instanziiert werden
+  // final fahrzeug = FahrzeugGerichtetBeiFactorie('BMW', 200); // Fehler: The constructor isn't available
+  // final  auto = Auto('BMW', 200);// Fehler: The constructor isn't available
 
   final auto = FahrzeugGerichtetBeiUnterKlassen.auto(
     name: 'BMW',
     geschwindigkeit: 200,
-  );
-  // print(auto.info); // Fehler: The getter 'info' isn't defined for the class 'FahrzeugGerichtetBeiUnterKlassen'.
-   auto.fahren(); // OK: die Methode fahren() ist verfügbar, es ist in Super Klasse definiert
-  final bus = FahrzeugGerichtetBeiUnterKlassen.buss(name: 'Mazedis', geschwindigkeit: 180, sitzplaetze: 50);
-  // print(bus.sitzplaetze); // Fehler: The Attribute 'sitzplaetze' isn't defined for the class 'FahrzeugGerichtetBeiUnterKlassen'.
-  // print((bus as _Bus).sitzplaetze); // Fehler: _Bus ist private Klasse.
+  ) as Auto; // as Auto ist notwendig, um die Attributen und Methoden von Auto Klasse zu benutzen.
+  // anders wird das Auto-Objekt als FahrzeugGerichtetBeiUnterKlassen Typen betrachtet.
+  // somit sind die Attribute und Methoden von Auto Klasse nicht verfügbar.
+  print(auto.info);
+  auto.fahren(); // OK: die Methode fahren() ist verfügbar, es ist in Super Klasse definiert
+  final bus = FahrzeugGerichtetBeiUnterKlassen.bus(name: 'Mazedis', geschwindigkeit: 180, sitzplaetze: 50) as Bus;
+  bus.sitzplaetze++; // Attributen in Tochter klasse sind verfügbar, weil bus als Bus Typen betrachtet wird.
 
-  final publicBus = FahrzeugGerichtetBeiUnterKlassen.publischBus(name: 'Mazedis', geschwindigkeit: 180, sitzplaetze: 50);
-  print((publicBus as Bus).sitzplaetze); // OK: die Attribute sitzplaetze ist in der Klasse Bus definiert und die Klasse Bus ist public.
+  final publicBus = FahrzeugGerichtetBeiUnterKlassen.bus(name: 'Mazedis', geschwindigkeit: 180, sitzplaetze: 50);
+  print(
+      'Sitzplatz ${(publicBus as Bus).sitzplaetze}'); // OK: die Attribute sitzplaetze ist in der Klasse Bus definiert und die Klasse Bus ist public.
 
+//##########################FahrzeugGerichtetBeiFactorie############################################################
   final autoWithFactorie = FahrzeugGerichtetBeiFactorie.auto(name: 'BMW', geschwindigkeit: 220);
   autoWithFactorie.fahren(); // diese Methode ist durch die Typen spezifiziert
   autoWithFactorie.bremsen(); // diese Methode ist für alle Typen gleich
