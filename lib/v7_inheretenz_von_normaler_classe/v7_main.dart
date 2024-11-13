@@ -23,12 +23,12 @@ void main() {
     baujahr: DateTime(2020),
     fahrer: max,
   );
-  auto.fahren();
+  // auto.fahren();
   final bus = BusV7(
     baujahr: DateTime(2000),
     fahrer: max,
   );
-  bus.fahren();
+  // bus.fahren();
   final spielzeug = Spielzeug(baujahr: DateTime(2022), baterienAnzahl: 2, baterienGrosse: 3); 
   spielzeug.details();
   final lkw = LKW(maxLast: 100, baujahr: DateTime(2020), fahrer: max);

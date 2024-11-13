@@ -22,7 +22,9 @@ class V7Fahrzeug {
     this.fahrer,
     this.marke,
     this.energieType,
-  });
+  }){
+    print('Fahrzeug Objekt ist erstellt');
+  }
   void details() {
     print('''
     Fahrzeug Details:
