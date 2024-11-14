@@ -7,7 +7,8 @@ void main() {
   final autoStringEnum = AutoMitStringEnum(EnginEnumMitStringElemente.benzin, 'Bmw');
   final String motorType = autoStringEnum.motor.lable; // Ok: Diese Enum hat ein String-Label.
   final auto = FahrzeugEnum.auto; // Direkter aus Enum kann man nur den Enum-Elemente bekommen.
-   print(auto.info);
+  print(auto.info);
+  // final auto2 = FahrzeugEnum(); // Error: The class 'FahrzeugEnum' has no default constructor.
   // Durch Static Methode und erweiterte Klasse kann man ein Objekt erstellen.
   final flexibleAuto = FahrzeugEnum.flexiibleAuto(name: 'BMW', geschwindigkeit: 320, sitzplaetze: 5) as FlexibleAuto;
   print(flexibleAuto.info);

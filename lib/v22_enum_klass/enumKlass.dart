@@ -1,4 +1,3 @@
-
 // Ein Enum kann auch als Klasse definiert werden.
 // Jeweils Elemente gilt als Objekt mit Attributen und Methoden.
 enum FahrzeugEnum {
@@ -14,10 +13,9 @@ enum FahrzeugEnum {
   final int sitzplaetze;
   // Konstruktor neim Eunm Klasse kann nur Const sein.
   const FahrzeugEnum({required this.name, required this.geschwindigkeit, required this.sitzplaetze});
-
- // Enum können keinen spzifisch Bau des Objekts haben.
- // Enum können keinen Factory-Konstruktor haben.
- // als Alternative kann eine statische Methode verwendet werden, die ein Objekt ähnlicher Klasse zurückgibt.
+  // Enum können keinen spzifisch Bau des Objekts haben.
+  // Enum können keinen Factory-Konstruktor haben.
+  // als Alternative kann eine statische Methode verwendet werden, die ein Objekt ähnlicher Klasse zurückgibt.
   static flexiibleAuto({required String name, required int geschwindigkeit, required int sitzplaetze}) {
     return FlexibleAuto(name: name, geschwindigkeit: geschwindigkeit, sitzplaetze: sitzplaetze);
   }
@@ -35,8 +33,9 @@ enum FahrzeugEnum {
   void bremsen() {
     print('Das Fahrzeug bremst');
   }
+  // enum Klasse kann auch statische Attribute und Methoden haben.
+  static String enumName='FahrzeugEnum';
 }
-
 
 // Eine normale Klasse, die benutzt wird, um die Enum-Klasse zu erweitern.
 class FlexibleAuto {

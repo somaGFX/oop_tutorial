@@ -1,7 +1,4 @@
-
-
-class Rechner {
-
+class TaschenRechner {
   // alle diese Methoden sind statisch, sie können ohne Instanzierung der Klasse aufgerufen werden.
   // Sie können aber nicht aus Objekten aufgerufen werden.
   static void addieren(int a, int b) {

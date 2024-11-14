@@ -18,8 +18,8 @@ void main() {
   // AutoV23.fahren();
   BusV23.fahren();
 
-  Rechner.addieren(1, 11);
-  Rechner.subtrahieren(11, 3);
-  final rechner = Rechner();
+  TaschenRechner.addieren(1, 11);
+  TaschenRechner.subtrahieren(11, 3);
+  final rechner = TaschenRechner();
   // rechner.multiplizieren(3, 3); // Error: The method 'multiplizieren' isn't defined for the class 'Rechner'.
 }

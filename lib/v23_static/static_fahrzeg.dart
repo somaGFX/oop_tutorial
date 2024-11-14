@@ -1,6 +1,3 @@
-
-
-
 // Klasen können static Attribute, Methoden und Getters haben.
 // Diese gehören zur Klasse und nicht zu einem Objekt.
 // Die static Attribute und Methoden können ohne Instanzierung der Klasse aufgerufen werden.
@@ -25,20 +22,16 @@ abstract class FahrzeugV23 {
     print('Fahrzeug fährt');
     // geschwindigkeit = 50; // Error: Instance member 'geschwindigkeit' can't be accessed using a static access.
   }
-
-  
 }
 
 class BusV23 extends FahrzeugV23 {
+  static String get classname => 'BusV23';
 
-
-static String get classname => 'BusV23';
-  
   // @override // Die Methode wird nicht von der Oberklasse geerbt, daher muss sie überschrieben werden.
   static void fahren() {
     print('Bus fährt');
   }
-  
+
   @override
   String toString() => 'Bus';
 }
@@ -50,7 +43,6 @@ class AutoV23 extends FahrzeugV23 {
 }
 
 class LkwV23 extends FahrzeugV23 {
-
   static String get classname => 'LkwV23';
   @override
   String toString() => 'Lkw';
