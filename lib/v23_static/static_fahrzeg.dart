@@ -22,6 +22,7 @@ abstract class FahrzeugV23 {
     print('Fahrzeug fährt');
     // geschwindigkeit = 50; // Error: Instance member 'geschwindigkeit' can't be accessed using a static access.
   }
+
 }
 
 class BusV23 extends FahrzeugV23 {
