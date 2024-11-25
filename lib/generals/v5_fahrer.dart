@@ -12,6 +12,8 @@ class Fahrer {
     if (alter - _fuehrerschein!.alter < 15) _fuehrerschein = null;
     // Wenn der Fahrer älter als 99 Jahre ist, darf er kein Führerschein haben
     if (alter > 99) _fuehrerschein = null;
+
+    if( _fuehrerschein!.ablaufdatum.isBefore(DateTime.now())) _fuehrerschein = null;
   }
   set fuehrerschein(Fuehrerschein? value) {
     if (value == null) {

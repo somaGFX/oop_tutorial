@@ -1,7 +1,7 @@
 import 'package:oop_tutorial/v4_kapselung/v4_kapselung.dart';
 
 void main() {
-  final auto = AutoV4(baujahr: DateTime(2020), marke: 'Mercedes', reifenRadius: 28, reifenBreite: 18,fahrer: 'Max');
+  final auto = AutoV4(baujahr: DateTime(2020), marke: 'Mercedes', reifenRadius: 28, reifenBreite: 18, fahrer: 'Max');
   auto.marke = 'Mercedes';
   auto.maxIinsasseZahl = 10; // 8
   // auto._minIinsasseZahl = 3; // Fehler weil _minIinsasseZahl ist private und kann nicht geändert werden
