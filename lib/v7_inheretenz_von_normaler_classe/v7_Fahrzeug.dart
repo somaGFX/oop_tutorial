@@ -1,6 +1,5 @@
 import 'package:oop_tutorial/generals/energie_enum.dart';
 import 'package:oop_tutorial/generals/v5_fahrer.dart';
-import 'package:oop_tutorial/generals/v5_fahrt.dart';
 
 
 // die Oberklasse kann ganz normal sein.
@@ -62,8 +61,7 @@ class V7Fahrzeug {
       print('Fahrzeug kann nicht fahren, weil kein Fahrer da ist');
       return;
     }
-    final fahrt = Fahrt(start: DateTime.now(), fahrer: fahrer!);
-    fahrt.sicherheitsniveau();
-    print('Fahrzeug fährt');
+
+   
   }
 }
