@@ -11,7 +11,7 @@ void main() {
 }
 
 // ########################## Klassenbau #########################
-// class Klassename {}
+// class Klassename {} 
 class AutoV1 {
   // ###################### Attribute ######################
   // Attribut-Datentypen Attribut-Name = Wert;
