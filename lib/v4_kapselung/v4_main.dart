@@ -1,4 +1,4 @@
-import 'package:oop_tutorial/v4_konstruktor_versichern/v4_konstruktor_versichern.dart';
+import 'package:oop_tutorial/v4_kapselung/v4_kapselung.dart';
 
 void main() {
   final auto = AutoV4(baujahr: DateTime(2020), marke: 'Mercedes', reifenRadius: 28, reifenBreite: 18,fahrer: 'Max');
