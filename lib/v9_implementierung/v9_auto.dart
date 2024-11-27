@@ -1,8 +1,9 @@
 import 'package:oop_tutorial/globals/energie_enum.dart';
 import 'package:oop_tutorial/globals/v5_fahrer.dart';
 import 'package:oop_tutorial/v9_implementierung/v9_fahrzueg.dart';
+
 // subklasse kann mehrere Klasse implementieren
-class AutoV9 implements V9Fahrzeug,WohnungsMobil {
+class AutoV9 implements V9Fahrzeug, WohnungsMobil {
   // anders als Erben, bei der Implementierung muss die alle Attribute und Methoden von der Superklasse überschrieben werden.
   // egal ob die Methode abstrakt oder nicht.
   @override
@@ -25,11 +26,11 @@ class AutoV9 implements V9Fahrzeug,WohnungsMobil {
   EnergieType? energieType;
 
   AutoV9({
-     this.reifenZahl=4,
-     this.maxInsasseZahl=5,
+    this.reifenZahl = 4,
+    this.maxInsasseZahl = 5,
     required this.baujahr,
-     this.reifenRadius=30,
-     this.reifenBreite=20,
+    this.reifenRadius = 30,
+    this.reifenBreite = 20,
     this.fahrer,
     this.marke,
     this.energieType,
@@ -73,13 +74,16 @@ class AutoV9 implements V9Fahrzeug,WohnungsMobil {
   void fahren() {
     print('Auto fährt');
   }
+
   // die alle Methoden und Attribute von der beiden Superklassen muss überschrieben werden.
   @override
-  void wohnen(){
+  void wohnen() {
     print('Wohnungsmobil wohnt');
   }
 }
-  class WohnungsMobil{
-  wohnen(){
-    print('Wohnungsmobil wohnt');}
+
+class WohnungsMobil {
+  wohnen() {
+    print('Wohnungsmobil wohnt');
   }
+}

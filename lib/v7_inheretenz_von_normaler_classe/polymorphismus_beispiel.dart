@@ -28,7 +28,7 @@ void main() {
     fahrer: max,
   );
   final spielzeug = Spielzeug(baujahr: DateTime(2022), baterienAnzahl: 2, baterienGrosse: 3);
-  spielzeug.details();
+  // spielzeug.details();
   final lkw = LKW(maxLast: 100, baujahr: DateTime(2020), fahrer: max);
   // Polymorphismus
   //
