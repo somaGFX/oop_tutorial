@@ -1,12 +1,16 @@
-
-
 void main() {
-  final auto = AutoV4(baujahr: DateTime(2020), marke: 'Mercedes', reifenRadius: 28, reifenBreite: 18, fahrer: 'Max');
+  final auto = AutoV4(
+      baujahr: DateTime(2020),
+      marke: 'Mercedes',
+      reifenRadius: 28,
+      reifenBreite: 18,
+      fahrer: 'Max',
+      maxInsasseZahl: 100);
   auto.marke = 'Mercedes';
   // innerhalb der Klasse Datei kann man auf private Variablen zugreifen
-  auto._maxInsasseZahl = -3;
+  // auto._maxInsasseZahl = -3;
   print(auto._maxInsasseZahl);
-  print(AutoV4.material);
+  // print(AutoV4.material);
   // auto.details();
 }
 //########################## Encapsulation #########################
@@ -16,52 +20,54 @@ class AutoV4 {
   static const String material = 'Metal';
   // private Variabl mit _ davor.
   // reifenZahl kann beim Umfall geändert werden, daher muss geschützt werden
-   int _reifenZahl = 4;
+  int _reifenZahl = 4;
   int _maxInsasseZahl;
   // min Insasse Zahl ist 1 und kann nicht geändert werden
   final int _minIinsasseZahl = 1;
   // _baujahr kann nur im Konstruktor gesetzt werden und darf nich geändert werden.
   // es macht keinen Sinn, dass das Baujahr geändert wird
   final DateTime _baujahr;
-   double _reifenRadius; 
-   double _reifenBreite; 
+  double _reifenRadius;
+  double _reifenBreite;
   String fahrer;
   String? marke;
   // named Parameter
   AutoV4({
     required DateTime baujahr,
     required this.marke,
-    int maxIinsasseZahl = 5,
+    int maxInsasseZahl = 5,
     required double reifenRadius,
     required double reifenBreite,
     required this.fahrer,
-  })  : _maxInsasseZahl = maxIinsasseZahl,
+  })  : _maxInsasseZahl = maxInsasseZahl,
         _baujahr = baujahr,
         _reifenRadius = reifenRadius,
         _reifenBreite = reifenBreite {
-          // Konstruktor Validierung 
+    // Konstruktor Validierung
 
-    if (maxIinsasseZahl > 8) throw Exception('Max IinsasseZahl darf nicht > 8 sein');
-    if (maxIinsasseZahl < 1) throw Exception('Max IinsasseZahl darf nicht < 1 sein');
+    if (maxInsasseZahl > 8) _maxInsasseZahl = 8;
+    print('MaxInsasseZahl Wert ist korrigiert');
+    if (maxInsasseZahl < 1) throw Exception('Max IinsasseZahl darf nicht < 1 sein');
     if (baujahr.isAfter(DateTime.now())) throw Exception('Baujahr darf nicht in der Zukunft sein');
     if (baujahr.isBefore(DateTime(1940))) throw Exception('Baujahr darf nicht zu alt sein');
     print('AutoV4 created');
   }
 
 //######################### Setters #########################
-  
+
   // Setter Validierung
-  set maxIinsasseZahl(int value) {
-    if (value > 8) {
+  set maxIinsasseZahl(int x) {
+    if (x > 8) {
       _maxInsasseZahl = 8;
       return;
     }
-    if (value < 1) {
+    if (x < 1) {
       _maxInsasseZahl = 1;
       return;
     }
-    _maxInsasseZahl = value;
+    _maxInsasseZahl = x;
   }
+
   set reifenRadius(double value) {
     if (value < 28) {
       _reifenRadius = 28;
@@ -90,14 +96,20 @@ class AutoV4 {
   int get moeglichepassagiere => _maxInsasseZahl - _minIinsasseZahl;
   DateTime get baujahr => _baujahr;
   int get alter => DateTime.now().year - _baujahr.year;
+  String get gruessen {
+    return 'Hallo von AutoV4';
+  }
+
   int get reifenZahl => _reifenZahl;
+  int get maxIinsasseZahl => _maxInsasseZahl;
 //########################## Methoden #########################
   void fahren() {
     print('AutoV4 fährt');
   }
+
   // Einen Beispiel für Attribute ,die nur innerhalb einer Methode geändert werden können
-  void umfall(int verlusteReifen) {
-    if(verlusteReifen.isNegative||verlusteReifen>_reifenZahl) return;
+  void unfall(int verlusteReifen) {
+    if (verlusteReifen.isNegative || verlusteReifen > _reifenZahl) return;
     _reifenZahl -= verlusteReifen;
     print('AutoV4 umfällt');
   }

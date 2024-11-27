@@ -3,11 +3,12 @@
 void main() {
   // Objekt-Instanzierung, (Erzeugung eines Objekts)
   final auto = AutoV1();
+
   // Änderung des Werts eines Attributs
   auto.fahrer = 'Ali';
   auto.marke = 'Mercedes';
-  // Methode aufrufen
-  auto.details();
+  // // Methode aufrufen
+  // auto.details();
 }
 
 // ########################## Klassenbau #########################

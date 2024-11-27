@@ -1,7 +1,7 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'dart:convert';
 
-import 'package:oop_tutorial/generals/engine.dart';
+import 'package:oop_tutorial/globals/engine.dart';
 
 class V14Auto {
   int reifenZahl;

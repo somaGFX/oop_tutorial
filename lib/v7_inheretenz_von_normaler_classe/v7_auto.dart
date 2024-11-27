@@ -1,3 +1,4 @@
+import 'package:oop_tutorial/globals/v5_fahrt.dart';
 import 'package:oop_tutorial/v7_inheretenz_von_normaler_classe/v7_Fahrzeug.dart';
 
 
@@ -23,6 +24,10 @@ class AutoV7 extends V7Fahrzeug {
   void fahren() {
     // innerhalb der Methode der Unterklasse kann die Methode der Oberklasse aufgerufen werden.
     super.fahren();
+       if (fahrer == null) return;
+    final fahrt = Fahrt(start: DateTime.now(), fahrer: fahrer!, fahrzeug: this);
+    // diese Nethode bewertet die Fahrtsicherheit je nach Fahrer.
     print('AutoV7 fährt');
+    fahrt.sicherheitsniveau();
   }
 }

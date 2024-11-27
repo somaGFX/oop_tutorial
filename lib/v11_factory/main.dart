@@ -1,8 +1,8 @@
 import 'dart:math';
 
-import 'package:oop_tutorial/generals/autos_marken.dart';
-import 'package:oop_tutorial/generals/energie_enum.dart';
-import 'package:oop_tutorial/generals/engine.dart';
+import 'package:oop_tutorial/globals/autos_marken.dart';
+import 'package:oop_tutorial/globals/energie_enum.dart';
+import 'package:oop_tutorial/globals/engine.dart';
 import 'package:oop_tutorial/v11_factory/v11_auto.dart';
 
 void main() {

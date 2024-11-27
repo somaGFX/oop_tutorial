@@ -1,5 +1,5 @@
-import 'package:oop_tutorial/generals/v5_fahrer.dart';
-import 'package:oop_tutorial/generals/v6_fuehrerschein.dart';
+import 'package:oop_tutorial/globals/v5_fahrer.dart';
+import 'package:oop_tutorial/globals/v6_fuehrerschein.dart';
 
 void main() {
   final maxFuehrerschein = Fuehrerschein(

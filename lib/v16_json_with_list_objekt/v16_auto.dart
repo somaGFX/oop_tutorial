@@ -1,6 +1,6 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'dart:convert';
-import 'package:oop_tutorial/generals/reifen.dart';
+import 'package:oop_tutorial/globals/reifen.dart';
 
 class V16Auto {
   int insasseZahl;

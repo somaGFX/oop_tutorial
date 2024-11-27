@@ -1,5 +1,6 @@
-import 'package:oop_tutorial/generals/energie_enum.dart';
-import 'package:oop_tutorial/generals/v5_fahrer.dart';
+import 'package:oop_tutorial/globals/energie_enum.dart';
+import 'package:oop_tutorial/globals/v5_fahrer.dart';
+import 'package:oop_tutorial/globals/v5_fahrt.dart';
 
 import 'package:oop_tutorial/v7_inheretenz_von_normaler_classe/v7_Fahrzeug.dart';
 
@@ -21,7 +22,7 @@ class BusV7 extends V7Fahrzeug {
     required Fahrer? fahrer,
     EnergieType energieType = EnergieType.diesel,
   }) : super(
-    // hier sind die Vermittleten Attribute zur Superklasse zugewiesen.
+          // hier sind die Vermittleten Attribute zur Superklasse zugewiesen.
           reifenZahl: reifenZahl,
           maxInsasseZahl: maxInsasseZahl,
           baujahr: baujahr,
@@ -31,10 +32,14 @@ class BusV7 extends V7Fahrzeug {
           energieType: energieType,
         );
 
-        // überschreiben der Methode der Oberklasse.
+  // überschreiben der Methode der Oberklasse.
   @override
   void fahren() {
-super.fahren();
+    super.fahren();
+    if (fahrer == null) return;
+    final fahrt = Fahrt(start: DateTime.now(), fahrer: fahrer!, fahrzeug: this);
+    // diese Nethode bewertet die Fahrtsicherheit je nach Fahrer.
     print('Bus fährt');
+    fahrt.sicherheitsniveau();
   }
 }

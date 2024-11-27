@@ -1,5 +1,5 @@
-import 'package:oop_tutorial/generals/v5_fahrer.dart';
-import 'package:oop_tutorial/generals/v6_fuehrerschein.dart';
+import 'package:oop_tutorial/globals/v5_fahrer.dart';
+import 'package:oop_tutorial/globals/v6_fuehrerschein.dart';
 import 'package:oop_tutorial/v7_inheretenz_von_normaler_classe/v7_Fahrzeug.dart';
 import 'package:oop_tutorial/v7_inheretenz_von_normaler_classe/v7_auto.dart';
 import 'package:oop_tutorial/v7_inheretenz_von_normaler_classe/v7_bus.dart';
@@ -9,7 +9,7 @@ import 'package:oop_tutorial/v7_inheretenz_von_normaler_classe/v7_spielzeug.dart
 void main() {
   final feurerschein = Fuehrerschein(
     id: 123456,
-    typ: FuehrerscheinTyp.pkw,
+    typ: FuehrerscheinTyp.lKW,
     ausstellungsdatum: DateTime(2020),
     ablaufdatum: DateTime(2025),
   );

@@ -1,7 +1,7 @@
-import 'package:oop_tutorial/generals/reifen.dart';
-import 'package:oop_tutorial/generals/v5_fahrer.dart';
-import 'package:oop_tutorial/generals/v6_fuehrerschein.dart';
-import 'package:oop_tutorial/generals/v5_fahrt.dart';
+import 'package:oop_tutorial/globals/reifen.dart';
+import 'package:oop_tutorial/globals/v5_fahrer.dart';
+import 'package:oop_tutorial/globals/v6_fuehrerschein.dart';
+import 'package:oop_tutorial/globals/v5_fahrt.dart';
 
 void main() {
   final maxFuehrerschein = Fuehrerschein(
@@ -10,7 +10,7 @@ void main() {
     ausstellungsdatum: DateTime(2020),
     ablaufdatum: DateTime(2026),
   );
-  final max = Fahrer(vorname: 'Max', nachname: 'Mustermann', alter: 25, fuehrerschein: maxFuehrerschein);
+  final max = Fahrer(vorname: 'Max', nachname: 'Mustermann', alter: 12, fuehrerschein: maxFuehrerschein);
   final auto = AutoV6(baujahr: DateTime(2020), marke: 'Mercedes', reifenRadius: 28, reifenBreite: 18, fahrer: max);
 
   auto.fahren();

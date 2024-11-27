@@ -1,5 +1,5 @@
-import 'package:oop_tutorial/generals/energie_enum.dart';
-import 'package:oop_tutorial/generals/v5_fahrer.dart';
+import 'package:oop_tutorial/globals/energie_enum.dart';
+import 'package:oop_tutorial/globals/v5_fahrer.dart';
 import 'package:oop_tutorial/v9_implementierung/v9_fahrzueg.dart';
 // subklasse kann mehrere Klasse implementieren
 class AutoV9 implements V9Fahrzeug,WohnungsMobil {

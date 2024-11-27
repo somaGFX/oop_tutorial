@@ -5,6 +5,7 @@ void main() {
   // Aber der Name des Parameters muss beim Bau des Objekts gegeben werden
   final auto = AutoV3(baujahr: DateTime(2020), marke: 'Mercedes');
   auto.marke = 'Mercedes';
+  auto.reifenZahl = -5;
   auto.details();
 }
 
