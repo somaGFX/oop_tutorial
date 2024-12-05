@@ -1,5 +1,3 @@
-
-
 void main() {
   // Objekt-Instanzierung, (Erzeugung eines Objekts)
   final auto = AutoV1();
@@ -7,12 +5,12 @@ void main() {
   // Änderung des Werts eines Attributs
   auto.fahrer = 'Ali';
   auto.marke = 'Mercedes';
-  // // Methode aufrufen
+  // Methode aufrufen
   // auto.details();
 }
 
 // ########################## Klassenbau #########################
-// class Klassename {} 
+// class Klassename {}
 class AutoV1 {
   // ###################### Attribute ######################
   // Attribut-Datentypen Attribut-Name = Wert;
@@ -22,17 +20,19 @@ class AutoV1 {
   int alter = 24;
   int reifenZahl = 4;
   // 28 => 38
-  double reifenRadius=30;
+  double reifenRadius = 30;
   // 18 => 25
-  double reifenBreite=20;
+  double reifenBreite = 20;
   String fahrer = 'Max';
   String marke = 'BMW';
+
   // ###################### Konstruktor ######################
   // Hier ist es unnötig, weil Dart automatisch einen Konstruktor erstellt.
   // Wir haben es nur für die Erklärung geschrieben.
   AutoV1() {
     print('Auto created');
   }
+
   // ###################### Methoden #########################
   void fahren(int geschwindigkeit) {
     print('Auto fährt mit $geschwindigkeit km/h');
@@ -56,6 +56,5 @@ class AutoV1 {
     print('Fahrer: $fahrer');
     print('Marke: $marke');
     print('Reifen Zahl: $reifenZahl');
-
   }
 }

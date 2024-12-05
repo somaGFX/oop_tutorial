@@ -11,7 +11,9 @@ class AutoV2 {
   // Material und reifenZahl haben fast immer den gleichen Wert,
   String material = 'metal';
   int insasseZahl = 5;
+
   // late => später initialisiert, weil es nachdem Bau des Objekts initialisiert wird
+
   late DateTime baujahr;
   late int alter;
   int reifenZahl = 4;
@@ -19,7 +21,9 @@ class AutoV2 {
   late double reifenBreite;
   String? fahrer;
   String marke = 'BMW';
-  // Baujahr variiert sich häufig zwischen einem Auto und einem anderen, daher ist es nicht sinnvoll, es als Konstante zu deklarieren
+
+  // Baujahr variiert häufig zwischen einem Auto und einem anderen,
+  // daher ist es nicht sinnvoll, es als Konstante zu deklarieren
   AutoV2(DateTime gegebeneBaujahr,
       // optionalen Parameter sind in ekige Klammern geschrieben
       [double gegebeneReifenRadius = 30,
@@ -27,12 +31,15 @@ class AutoV2 {
       int gegebeneAlter = 24]) {
     // print('baujahr: $baujahr'); ergibt Error,weil baujahr noch nicht initialisiert ist
     // werte werden erst nach dem Bau des Objekts zugewiesen
+
     baujahr = gegebeneBaujahr;
     reifenRadius = gegebeneReifenRadius;
     reifenBreite = gegebeneReifenBreite;
     alter = gegebeneAlter;
+
     print('AutoV2 created');
   }
+
   void fahren(int geschwindigkeit) {
     print('AutoV2 fährt');
   }
@@ -41,8 +48,8 @@ class AutoV2 {
     print('AutoV2 bremst');
   }
 
-  void liefern() {
-    print('AutoV2 5 Persone liefert');
+  void transportieren() {
+    print('AutoV2 5 Personen werden transportiert');
   }
 
   void details() {
