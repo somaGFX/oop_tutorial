@@ -1,3 +1,4 @@
+
 void main() {
   final auto = AutoV4(
       baujahr: DateTime(2020),
@@ -9,7 +10,8 @@ void main() {
   auto.marke = 'Mercedes';
   // innerhalb der Klasse Datei kann man auf private Variablen zugreifen
   // auto._maxInsasseZahl = -3;
-  print(auto._maxInsasseZahl);
+  auto._reifenZahl = -5;
+  print(auto._reifenZahl);
   // print(AutoV4.material);
   // auto.details();
 }

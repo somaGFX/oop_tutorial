@@ -39,7 +39,7 @@ void main() {
     lkw,
     auto,
     bus,
-    spielzeug
+    spielzeug,
   ]; // richtig: weil Lkw, Auto, Bus und Spielzeug sind V7Fahrzeug
   for (var fahrzeug in fahrzeuge) {
     fahrzeug

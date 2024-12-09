@@ -10,7 +10,6 @@ class Spielzeug extends V7Fahrzeug {
     required super.baujahr,
     super.reifenRadius = 2,
     super.reifenBreite = 1,
-    
   }) : super(
           maxInsasseZahl: 0,
           reifenZahl: spielZeugReifenZahl,
@@ -24,4 +23,5 @@ class Spielzeug extends V7Fahrzeug {
     }
     print('Spielzeug fährt');
   }
+
 }

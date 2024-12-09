@@ -13,6 +13,7 @@ class BusV7 extends V7Fahrzeug {
   BusV7({
     // hier haben wir This benutzt, weil wir auf die eigene Attribute zugreifen.
     this.doppelteEtage = false,
+    
     // hier sind die Vermittleten Attribute definiert.
     int reifenZahl = 6,
     int maxInsasseZahl = 30,
